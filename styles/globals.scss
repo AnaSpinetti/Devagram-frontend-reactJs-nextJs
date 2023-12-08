@@ -5,6 +5,11 @@
     font-size: 14px;
 }
 
+html, body, #__next{
+    height: 100%;
+    margin: 0;
+}
+
 .avatar {
     border-radius: 50%;
     object-fit: cover;
@@ -14,5 +19,24 @@
     display: none;
 }
 
+input{
+    &::placeholder{
+        color: $gray2;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder{
+        color: $gray2;
+        opacity: 1;
+    }
+
+    &::-ms-input-placeholder{
+        color: $gray2;
+        opacity: 1;
+    }
+}
+
 @import '../public/fonts/fonts.scss';
 @import '../components/Button/button.scss';
+@import '../components/publicInput/publicInput.scss';
+@import '../styles/publicPage.scss';
