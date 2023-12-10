@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export function UploadImage({className='', setImage, imagePreview, imagePreviewClassname='', setRef}){
+export default function UploadImage({className='', setImage, imagePreview, imagePreviewClassname='', setRef}){
     const inputRef = useRef(null);
 
     useEffect(() => {

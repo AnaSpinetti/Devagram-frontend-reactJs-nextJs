@@ -55,21 +55,14 @@
         .publicPageContent{
             flex: 1;
             width: 30%;
-            height: 60%;
             border: solid 1px $primaryColor;
             border-radius: 26px;
-            vertical-align: middle;
-            padding: 40px;
-        }
-
-        form{
-            margin-top: 40px;
+            padding: 7%;
         }
 
         .btn{
             padding: 10px;
             font-size: 18px;
-            margin-top: 50px;
         }
 
         .footerPublicPage{
