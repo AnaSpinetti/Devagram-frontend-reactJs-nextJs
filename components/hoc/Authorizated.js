@@ -1,5 +1,7 @@
 import UserService from "@/services/UserService"
 import { useRouter } from "next/router";
+import Header from "../Layout/Header";
+import Footer from "../Layout/Footer";
 
 const userService = new UserService();
 export default function Authorizated(Component){
@@ -12,7 +14,13 @@ export default function Authorizated(Component){
                 return null;
             }
             
-            return <Component {...props} />
+            return (
+                <>
+                    <Header />
+                        <Component {...props} />
+                    <Footer />
+                </>
+            );
         }
 
         return null;

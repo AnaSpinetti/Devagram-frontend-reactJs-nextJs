@@ -34,24 +34,24 @@ input{
         color: $gray2;
         opacity: 1;
     }
+}
 
-    .desktop {
-        @media screen and (min-width: $desktopBreakPoint){
-            display: block;
-        }
-        @media screen and (max-width: calc($desktopBreakPoint - 1px)){
-            display: none;
-        }
-    } 
+.desktop {
+    @media screen and (min-width: $desktopBreakPoint){
+        display: block;
+    }
+    @media screen and (max-width: calc($desktopBreakPoint - 1px)){
+        display: none;
+    }
+} 
 
-    .mobile {
-        @media screen and (min-width: $desktopBreakPoint){
-            display: none;
-        }
-        @media screen and (max-width: calc($desktopBreakPoint - 1px)){
-            display: block;
-        }
-    } 
+.mobile {
+    @media screen and (min-width: $desktopBreakPoint){
+        display: none;
+    }
+    @media screen and (max-width: calc($desktopBreakPoint - 1px)){
+        display: block;
+    }
 }
 
 .validationMessage{
@@ -62,8 +62,24 @@ input{
     margin-bottom: 15px;
 }
 
+.navbar{
+    ul{
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        margin: 10px 0px;
+
+        li{
+            list-style: none;
+            cursor: pointer;
+        }
+    }
+}
+
 @import '../public/fonts/fonts.scss';
 @import '../components/Button/button.scss';
 @import '../components/publicInput/publicInput.scss';
+@import '../components/Layout/header.scss';
+@import '../components/Layout/footer.scss';
 @import '../styles/publicPage.scss';
 @import '../pages/register/register.scss';
