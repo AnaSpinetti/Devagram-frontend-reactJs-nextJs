@@ -2,6 +2,7 @@ import HttpService from "./HttpService";
 
 export default class UserService extends HttpService{
     async login(credentials){
+        
         const {data} = await this.post('/auth/login', credentials)
 
         localStorage.setItem('name', data.name);
@@ -9,7 +10,9 @@ export default class UserService extends HttpService{
         localStorage.setItem('token', data.token);
 
         const user = await this.get('/user');
-        localStorage.setItem('id', user.data._id);
+        localStorage.setItem('id', user.data.id);
+
+        console.log(user.data)
             
         if(user.data.avatar){
             localStorage.setItem('avatar', user.data.avatar);

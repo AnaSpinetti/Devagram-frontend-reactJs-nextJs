@@ -61,7 +61,8 @@ export default function Register(){
             router.push('/')
 
         } catch (error) {
-            console.log(error)
+            console.log(error?.response?.data.error)    
+            alert("Ocorreu um erro ao registrar o usuário: " + error?.response?.data.error)
         }
 
         setFormLoading(false)
