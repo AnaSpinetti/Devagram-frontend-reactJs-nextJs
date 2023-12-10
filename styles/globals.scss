@@ -10,6 +10,10 @@ html, body, #__next{
     margin: 0;
 }
 
+strong{
+    font-family: $fontBold;
+}
+
 .avatar {
     border-radius: 50%;
     object-fit: cover;

@@ -2,8 +2,24 @@ import logo from "../../public/images/logoHorizontal.svg";
 import lupa from "../../public/images/lupa.svg";
 import Image from "next/image";
 import Nav from "./Nav";
+import { useState } from "react";
+import SearchResult from "./SearchResult";
 
 export default function Header(){
+    const [searchResult, setSearchResult] = useState([]);
+    const [searchedTerm, setSearchedTerm] = useState("");
+
+    const onType = () => {
+        setSearchedTerm(e.target.value)
+        setSearchResult([])
+
+        return
+    }
+
+    const onClickResult = () => {
+        return
+    }
+
     return (
         <header className="headerDefault">
             <div className="headerContentDefault">
@@ -16,11 +32,18 @@ export default function Header(){
                         <Image src={lupa} alt="Lupa da barra de pesquisa" layout="fill" />
                     </div>
 
-                    <input type="text" placeholder="Pesquisar" value={""} onChange={(e) => console.log("ok")} />
+                    <input type="text" placeholder="Pesquisar" value={searchedTerm} onChange={onType} />
 
                     <Nav className="desktop" />
                 </div>
             </div>
+            {searchResult.length > 0 && (
+                <div className="searchResultContainer">
+                    {searchResult.map(r => (
+                        <SearchResult avatar={r.avatar} name={r.name} email={r.email} key={r._id} id={r._id} onClick = {onClickResult} />
+                    ))}
+                </div>
+            )}
         </header>
     )
 }
