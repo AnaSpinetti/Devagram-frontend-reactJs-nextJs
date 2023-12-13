@@ -11,8 +11,6 @@ export default class UserService extends HttpService{
 
         const user = await this.get('/user');
         localStorage.setItem('id', user.data.id);
-
-        console.log(user.data)
             
         if(user.data.avatar){
             localStorage.setItem('avatar', user.data.avatar);
@@ -25,5 +23,9 @@ export default class UserService extends HttpService{
 
     isAuthenticated() {
         return localStorage.getItem('token') !== null;
+    }
+
+    async search(term){
+        return this.get('/search?filter=' + term)
     }
 }

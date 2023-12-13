@@ -4,27 +4,52 @@ import Image from "next/image";
 import Nav from "./Nav";
 import { useState } from "react";
 import SearchResult from "./SearchResult";
+import UserService from "@/services/UserService";
+import { useRouter } from "next/router";
+
+const userService = new UserService();
 
 export default function Header(){
     const [searchResult, setSearchResult] = useState([]);
     const [searchedTerm, setSearchedTerm] = useState("");
 
-    const onType = () => {
+    const router = useRouter()
+
+    const onType = async (e) => {
         setSearchedTerm(e.target.value)
         setSearchResult([])
 
-        return
+        if(searchedTerm.length < 3) {
+            return;
+        }
+
+        try {
+            const {data} = await userService.search(searchedTerm);
+            
+            setSearchResult(data);
+            
+
+        } catch (error) {
+            console.log(error);
+            alert("Erro ao pesquisar usuario " + error?.response?.data?.error)
+        }
     }
 
-    const onClickResult = () => {
-        return
+    const onClickResult = (e) => {
+        setSearchedTerm('')
+        setSearchResult([])
+        router.push('/profile/' + e)
+    }
+
+    const redirectToHome = () => {
+        router.push('/')
     }
 
     return (
         <header className="headerDefault">
             <div className="headerContentDefault">
                 <div className="logoDefaultHeader">
-                    <Image src={logo} alt="Logo Devaria" layout="fill" />
+                    <Image onClick={redirectToHome} src={logo} alt="Logo Devaria" layout="fill" />
                 </div>
 
                 <div className="searchBar">
