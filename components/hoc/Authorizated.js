@@ -13,12 +13,14 @@ export default function Authorizated(Component){
                 router.replace('/');
                 return null;
             }
+
+            const loggedUser =  userService.getLoggedUser();
             
             return (
                 <>
-                    <Header />
-                        <Component {...props} />
-                    <Footer />
+                    <Header loggedUser={loggedUser} />
+                        <Component loggedUser={loggedUser} {...props} />
+                    <Footer loggedUser={loggedUser} />
                 </>
             );
         }

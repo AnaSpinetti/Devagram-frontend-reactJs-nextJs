@@ -1,8 +1,9 @@
-import Authorizated from "../hoc/Authorizated"
+import Authorizated from "../hoc/Authorizated";
+import { Feed } from "../feed";
 
-function Home(){
+function Home({loggedUser}){
     return(
-        <h1>teste</h1>
+        <Feed loggedUser={loggedUser} />
     )
 }
 

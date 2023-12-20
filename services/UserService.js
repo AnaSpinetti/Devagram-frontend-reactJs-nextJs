@@ -28,4 +28,14 @@ export default class UserService extends HttpService{
     async search(term){
         return this.get('/search?filter=' + term)
     }
+
+    getLoggedUser(){
+        return {
+            id: localStorage.getItem('id'),
+            name: localStorage.getItem('name'),
+            email: localStorage.getItem('email'),
+            avatar: localStorage.getItem('avatar')
+
+        }
+    }
 }
