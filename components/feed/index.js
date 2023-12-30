@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import {Post} from "./Post";
 
-export function Feed({loggedUser}){
+export function Feed({loggedUser, loggedUser}){
     const [postList, setPostList] = useState([]);
 
     useEffect(() => {
@@ -9,9 +9,9 @@ export function Feed({loggedUser}){
     },[loggedUser])
 
     return (
-        <div className="feedContainer">
+        <div className="feedContainer desktop30pct">
             {postList.map(postData => (
-                <Post {...postData}  key={postData.id}/>
+                <Post loggedUser={loggedUser} {...postData}  key={postData.id}/>
             ))}
         </div>
     )

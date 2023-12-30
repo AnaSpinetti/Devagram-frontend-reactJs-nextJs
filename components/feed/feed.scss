@@ -1,0 +1,105 @@
+.feedContainer{
+    padding-bottom: 60px;
+    background-color: $white;
+    margin-top: 16px;
+
+    .post{
+        .avatar{
+            height: 32px;
+            width: 32px;
+            margin-right: 8px;
+        }
+
+        .headerPost{
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            margin-bottom: 8px;
+
+
+            strong{
+                font-size: 12px;
+                color: $gray4;
+            }
+        }
+
+        .postimage{
+            img{
+                width: 100%;
+                height: auto;
+                max-height: 360px;
+                object-fit: cover;
+            }
+        }
+
+        .footerPost{
+            padding: 5px 16px;
+
+            strong.userName{
+                font-size: 12px;
+                float: left;
+                margin-right: 4px;
+                color: $gray4;
+            }
+
+            p.description{
+                margin: 0 0 2px;
+                font-size: 12px;
+                color: $gray4;
+
+                .showFullDescription{
+                    font-size: 12px;
+                    color: $primaryColor3;
+                    margin-left: 4px;
+                    cursor: pointer;
+                }
+            }
+
+            .actions{
+                display: flex;
+                align-items: center;
+                margin-bottom: 6px;
+
+                > span{
+                    margin-right: 5px !important;
+                }
+
+                .likeCounter{
+                    font-family: $fontLight;
+                    font-size: 10px;
+                    color: $gray4;
+                    
+                    strong{
+                        color: $gray4;
+                        font-size: 10px;
+                    }
+                }
+            }
+
+        }
+
+        .containerSectionToComment{
+            display: flex;
+            padding: 0 12px;
+            align-items: center;
+            margin-bottom: 16px;
+
+            textarea{
+                resize: none;
+                flex: 1;
+                max-width: 100%;
+                border: none;
+                outline: none;
+                font-size: 12px;
+                color: $gray2;
+            }
+        }
+
+    }
+
+    @media screen and(min-width: $desktopBreakPoint) {
+        .feedContainer{
+            padding-top: 8px;
+        }
+    }
+}
