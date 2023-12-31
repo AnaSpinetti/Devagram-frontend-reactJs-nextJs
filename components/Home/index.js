@@ -1,5 +1,5 @@
 import Authorizated from "../hoc/Authorizated";
-import { Feed } from "../feed";
+import Feed from "../feed";
 
 function Home({loggedUser}){
     return(
