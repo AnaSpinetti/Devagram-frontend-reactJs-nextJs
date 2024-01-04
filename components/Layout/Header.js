@@ -13,6 +13,11 @@ export default function Header(){
     const [searchResult, setSearchResult] = useState([]);
     const [searchedTerm, setSearchedTerm] = useState("");
 
+    let headerClassName = '';
+    if(window && window.location.pathname !== '/'){
+        headerClassName = 'desktop';
+    }
+
     const router = useRouter()
 
     const onType = async (e) => {
@@ -46,8 +51,8 @@ export default function Header(){
     }
 
     return (
-        <header className="headerDefault">
-            <div className="headerContentDefault">
+        <header className={`headerDefault ${headerClassName}`}>
+            <div className={"headerContentDefault"}>
                 <div className="logoDefaultHeader">
                     <Image onClick={redirectToHome} src={logo} alt="Logo Devaria" layout="fill" />
                 </div>
