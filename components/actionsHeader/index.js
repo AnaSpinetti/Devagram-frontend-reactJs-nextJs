@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function ActionsHeader({className, iconBack, rightElement, textLeft = null, onClickItemLeft, title}){
+export default function ActionsHeader({className, onClickItemRight, iconBack, rightElement, textLeft = null, onClickItemLeft, title}){
     
     
     return (
@@ -18,7 +18,7 @@ export default function ActionsHeader({className, iconBack, rightElement, textLe
                 <h3>{title}</h3>
 
                 {rightElement && (
-                <button type="button"/*onClick={}*/>{rightElement}</button>
+                <button className="btnRightActions" onClick={onClickItemRight} style={{cursor: 'pointer', border: 'none', backgroundColor: 'transparent'}}>{rightElement}</button>
                 )}
         </div>
     )

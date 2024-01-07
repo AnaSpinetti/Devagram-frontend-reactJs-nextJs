@@ -18,9 +18,8 @@
         .headerPost {
             display: flex;
             align-items: center;
-            padding: 0 12px;
+            padding: 12px;
             margin-bottom: 8px;
-
 
             strong {
                 font-size: 12px;
@@ -108,31 +107,36 @@
     }
 
     @media screen and (min-width: $desktopBreakPoint) {
-        .feedContainer {
-            padding-top: 8px;
 
-            .post {
-                .avatar {
-                    width: 42px;
-                    height: 42px;
-                }
+        padding-top: 8px;
+        margin-top: 0px;
 
-                .footerPost {
-                    .actions {
-                        >span {
-                            cursor: pointer;
-                        }
+        .post {
+            .avatar {
+                width: 42px;
+                height: 42px;
+            }
+
+            .headerPost {
+                cursor: pointer;
+            }
+
+            .footerPost {
+                .actions {
+                    >span {
+                        cursor: pointer;
                     }
                 }
+            }
 
-                .containerSectionToComment {
-                    margin-top: 12px;
+            .containerSectionToComment {
+                margin-top: 12px;
 
-                }
             }
         }
+
         .submitComment {
-            background-color: transparent ;
+            background-color: transparent;
             color: $primaryColor;
             outline: none;
             border: none;

@@ -17,8 +17,12 @@ const feedService = new FeedService();
 export default function Post({id, user, image, description, comments, loggedUser, likes}){
     const [postLikes, setPostLikes] = useState(likes)
     const [commentsPost, setCommentPost] = useState(comments);
-    const [currentDescriptionLength, setCurrentDescriptionLength] = useState(limitDescriptionLength)
     const [showSectionToComment, setShowSectionToComment] = useState(false);
+    const [currentDescriptionLength, setCurrentDescriptionLength] = useState(limitDescriptionLength)
+
+    const showFullDescription = () => {
+        setCurrentDescriptionLength(Number.MAX_SAFE_INTEGER)
+    }
 
     const isDescriptionGreaterThanLimit = () => {
         return description.length > currentDescriptionLength;
@@ -34,10 +38,6 @@ export default function Post({id, user, image, description, comments, loggedUser
         return message;
     }
 
-    const showFullDescription = () => {
-        setCurrentDescriptionLength(Number.MAX_SAFE_INTEGER)
-    }
-
     // Altera o ícone de comentar quando clicamos para exibir a seção de escrever comentário
     const getCommentIcon = () => {
         return showSectionToComment ? commentActive : commentGray
@@ -48,8 +48,7 @@ export default function Post({id, user, image, description, comments, loggedUser
     }
 
     const commentPost = async (newComment) => {
-        try {
-            
+        try {            
             await feedService.commentpost(id, {comment: newComment});
             setShowSectionToComment(false);
             setCommentPost([...commentsPost, {
@@ -70,7 +69,6 @@ export default function Post({id, user, image, description, comments, loggedUser
 
     const toggleLike = async () => {
         try {
-            //TODO INTEGRAÇÃO COM A API
             await feedService.toggleLike(id);
 
             const isLiked = postLikes.includes(loggedUser.id);

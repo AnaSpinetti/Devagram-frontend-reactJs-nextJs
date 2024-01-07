@@ -22,7 +22,7 @@ const routeMap = {
     profile: {
         activeImage: userAtivo,
         inactiveImage: userInativo,
-        route: ['/profile/main', '/profile/main/edit']
+        route: ['/profile/main', '/profile/edit']
     }
 }
 

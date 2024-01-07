@@ -90,7 +90,20 @@ input{
 .desktop30pct{
     @media screen and (min-width: $desktopBreakPoint){
         width: 30%;
+        background-color: $white;
         margin: auto;
+    }
+}
+
+.line{
+    margin: 0;
+    border: 'none';
+    background-color: $gray;
+    height: 1px;
+
+    @media screen and (min-width: $desktopBreakPoint){
+        margin: 0 auto;
+        width: 94%;
     }
 }
 
@@ -102,5 +115,5 @@ input{
 @import '../styles/publicPage.scss';
 @import '../pages/register/register.scss';
 @import '../components/feed/feed.scss';
-@import '../pages/profile/[id]/profile.scss';
+@import '../pages/profile/profile.scss';
 @import '../components/actionsHeader/actionsHeader.scss';
