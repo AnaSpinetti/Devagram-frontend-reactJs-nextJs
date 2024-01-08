@@ -27,7 +27,7 @@ strong{
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 input{
@@ -89,9 +89,9 @@ input{
 
 .desktop30pct{
     @media screen and (min-width: $desktopBreakPoint){
-        width: 30%;
+        width: 40%;
         background-color: $white;
-        margin: auto;
+        margin: 0 auto;
     }
 }
 
@@ -108,12 +108,16 @@ input{
 }
 
 @import '../public/fonts/fonts.scss';
+@import '../styles/publicPage.scss';
+
 @import '../components/Button/button.scss';
 @import '../components/publicInput/publicInput.scss';
 @import '../components/Layout/header.scss';
 @import '../components/Layout/footer.scss';
-@import '../styles/publicPage.scss';
-@import '../pages/register/register.scss';
 @import '../components/feed/feed.scss';
-@import '../pages/profile/profile.scss';
 @import '../components/actionsHeader/actionsHeader.scss';
+@import '../components/Loader/loader.scss';
+
+@import '../pages/register/register.scss';
+@import '../pages/profile/profile.scss';
+@import '../pages/post/post.scss';

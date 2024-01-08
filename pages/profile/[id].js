@@ -20,7 +20,6 @@ function Profile({loggedUser}){
             );
             return data
         } catch (e) {
-            console.log(e);
             alert("Não foi possível obter os dados do perfil " + (e?.response?.data.error || ''))
         }
     }

@@ -62,7 +62,12 @@
                     }
                 }
             }
-
+            
+            .postComments{
+                max-height: 100px;
+                overflow-y: auto;
+            }
+            
             strong.userName {
                 font-size: 12px;
                 float: left;
@@ -122,10 +127,16 @@
             }
 
             .footerPost {
+
                 .actions {
                     >span {
                         cursor: pointer;
                     }
+                }
+
+                .postComments{
+                    max-height: 100px;
+                    overflow-y: auto;
                 }
             }
 

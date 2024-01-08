@@ -18,6 +18,19 @@ export default function UploadImage({className='', setImage, imagePreview, image
         if(!inputRef?.current?.files?.length) return
 
         const file = inputRef?.current?.files[0];
+        getImageURLandUpdate(file)
+
+    }
+
+    const onDropImage = (e) => {
+        e.preventDefault();
+        if(e.dataTransfer.files && e.dataTransfer.files.length > 0){
+            const file = e.dataTransfer.files[0];
+            getImageURLandUpdate(file)
+        }
+    }
+
+    const getImageURLandUpdate = (file) => {
         const fileReader = new FileReader();
         fileReader.readAsDataURL(file);
         fileReader.onloadend = () => {
@@ -29,7 +42,7 @@ export default function UploadImage({className='', setImage, imagePreview, image
     }
 
     return(
-        <div className={`uploadImageContainer ${className}`} onClick={openFileSelector}>
+        <div className={`uploadImageContainer ${className}`} onClick={openFileSelector} onDragOver={e => e.preventDefault()} onDrop={onDropImage}>
             {imagePreview && (
                 <div className="imagePreviewContainer">
                     <img src={imagePreview} alt="Preview da imagem" className={imagePreviewClassname} />

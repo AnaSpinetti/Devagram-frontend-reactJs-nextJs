@@ -55,7 +55,6 @@ export default function HeaderProfile({user, isInPersonalProfile=false}) {
             )
             setIsFollowingUser(!isFollowingUser)
         } catch (e) {
-            console.log(e)
             alert("Erro ao seguir/desseguir usuário " + (e?.response?.data.error || ''))
         }
     }

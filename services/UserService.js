@@ -21,6 +21,10 @@ export default class UserService extends HttpService{
         return this.post('/auth/register', data)
     }
 
+    async updateProfile(data){
+        return this.put('/user', data)
+    }
+
     isAuthenticated() {
         return localStorage.getItem('token') !== null;
     }

@@ -60,7 +60,6 @@ export default function Post({id, user, image, description, comments, loggedUser
             
             return true
         } catch (e) {
-            console.log(e)
             alert("Erro ao comentar! " + (e?.response?.data.error || ''))
             return false;
         }
@@ -78,7 +77,6 @@ export default function Post({id, user, image, description, comments, loggedUser
                 setPostLikes([...postLikes, loggedUser.id]);
             }
         } catch (e) {
-            console.log(e)
             alert('Não foi possível curtir/descurtir essa publicação ' + (e?.response?.data?.error || ''))
         }
     }

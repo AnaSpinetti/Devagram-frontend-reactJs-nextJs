@@ -1,0 +1,99 @@
+.pagePost {
+    .pagePostContent {
+        display: flex;
+        flex-direction: column;
+
+        .firstStep {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+
+            .uploadImageContainer {
+                .imagePreviewContainer {
+                    margin: 30px auto;
+
+                    img {
+                        object-fit: cover;
+                    }
+
+                    .previewImagePost {
+                        height: 150px;
+                        width: 150px;
+                        object-fit: cover;
+                    }
+
+                    .previewSelectedImage {
+                        height: 250px;
+                        width: 250px;
+                    }
+                }
+            }
+
+            .btn {
+                background-color: $primaryColor3;
+                width: 70%;
+                margin: auto;
+                padding: 12px;
+                color: $white;
+                cursor: pointer;
+
+                &:hover {
+                    border: none;
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        .secondStep {
+            display: flex;
+            padding: 16px;
+
+            .uploadImageContainer {
+                .imagePreviewContainer {
+                    height: 80px;
+                    width: 80px;
+
+                    img{
+                        margin-right: 16px;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            textarea{
+                border: none;
+                resize: none;
+                outline: none;
+                font-size: 12px;
+                font-family: $fontLight;
+                flex: 1;
+                color: $gray2;
+            }
+        }
+
+    }
+
+    @media screen and (min-width: $desktopBreakPoint) {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .textDragAndDrop {
+            text-align: center;
+            margin-bottom: 20px;
+            color: $gray4;
+        }
+
+        .secondStep{
+            .uploadImageContainer {
+                .imagePreviewContainer {
+                    height: 160px;
+                    width: 160px;
+                }
+            }
+        }
+    }
+}

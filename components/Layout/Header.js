@@ -35,7 +35,6 @@ export default function Header(){
             
 
         } catch (error) {
-            console.log(error);
             alert("Erro ao pesquisar usuario " + error?.response?.data?.error)
         }
     }

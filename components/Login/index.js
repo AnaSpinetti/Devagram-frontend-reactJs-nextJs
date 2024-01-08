@@ -39,7 +39,6 @@ export default function Login({beforeAuthentication}){
                 beforeAuthentication();
             }
         } catch (error) {
-            console.log(error);
             alert("Erro ao realizar login do usuario " + error?.response?.data.error)
         }
 

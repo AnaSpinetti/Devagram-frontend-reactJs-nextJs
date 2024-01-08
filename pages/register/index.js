@@ -60,8 +60,7 @@ export default function Register(){
             await userService.login({login: email, password})
             router.push('/')
 
-        } catch (error) {
-            console.log(error?.response?.data.error)    
+        } catch (error) {  
             alert("Ocorreu um erro ao registrar o usuário: " + error?.response?.data.error)
         }
 

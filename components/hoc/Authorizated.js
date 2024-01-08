@@ -2,6 +2,7 @@ import UserService from "@/services/UserService"
 import { useRouter } from "next/router";
 import Header from "../Layout/Header";
 import Footer from "../Layout/Footer";
+import Loader from "../Loader";
 
 const userService = new UserService();
 export default function Authorizated(Component){
@@ -19,6 +20,7 @@ export default function Authorizated(Component){
             return (
                 <>
                     <Header loggedUser={loggedUser} />
+                        <Loader />
                         <Component loggedUser={loggedUser} {...props} />
                     <Footer loggedUser={loggedUser} />
                 </>
